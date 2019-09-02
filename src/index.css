@@ -13,10 +13,7 @@ code {
   monospace;
 }
 .loadWrapper{
-  width: 32px;
-  height: 32px;
   position: fixed;
-  top: calc(50vh - 16px);
-  left: calc(50% - 16px);
-  background-color: aqua;
+  top: calc(50vh - 18px);
+  left: calc(50% - 18px);
 }

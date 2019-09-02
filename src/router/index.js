@@ -2,28 +2,34 @@
  * read me: router组件
  * Created by pengtao on 2019/8/15
  */
-import React, { Component, lazy  } from 'react';
-import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { lazy } from 'react';
 
-const partA = lazy(() => import('../components/partA'));
-const partB = lazy(() => import('../components/partB'));
-const partC = lazy(() => import('../components/partC'));
-
-export default class RouterComponent extends Component {
-
-  state = {
-
-  };
-
-  render () {
-    return (
-      <Router>
-        <Switch>
-          <Route path={'/partA'} component={partA} />
-          <Route path={'/partB'} component={partB} />
-          <Route path={'/partC'} component={partC} />
-        </Switch>
-      </Router>
-    )
+export default [
+  {
+    path: '/basic',
+    // component: lazy(() => import('')),
+    redirect: '/basic/partD',
+    exact: true
+  },
+  {
+    path: '/basic/partD',
+    component: lazy(() => import('@/components/indexLayout/partD/partD'))
+  },
+  {
+    path: '/basic/partE',
+    component: lazy(() => import('@/components/indexLayout/partE/partE'))
+  },
+  {
+    path: '/partA',
+    component: lazy(() => import('@/components/partA'))
+  },
+  {
+    path: '/partB',
+    component: lazy(() => import('@/components/partB'))
+  },
+  {
+    path: '/partC',
+    redirect: '/partA',
+    // component: lazy(() => import('@/components/partC'))
   }
-}
+];

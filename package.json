@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.22.1",
+    "babel-plugin-import": "^1.12.0",
+    "less": "^3.10.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1"
   },
   "scripts": {
-    "start": "cross-env SPA_ENV=dev react-app-rewired start",
-    "build": "cross-env SPA_ENV=production react-app-rewired build",
+    "start": "cross-env SPA_ENV=dev port=7777 react-app-rewired start",
+    "build": "cross-env SPA_ENV=production port=7777 react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
   },
@@ -30,6 +33,9 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
+    "customize-cra": "^0.5.0",
+    "less-loader": "^5.0.0",
     "react-app-rewired": "^2.1.3"
   }
 }
